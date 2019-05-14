@@ -8,13 +8,14 @@ gem 'pg', '~> 0.21'
 gem 'puma'
 gem 'rails', '5.2.3'
 gem 'redis'
-
+gem 'trix-rails', require: 'trix'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'shrine'
 # Obfuscates form HTML so that bots submit spam to invisible fields
 gem 'invisible_captcha'
 # I18n Rails and Devise support
