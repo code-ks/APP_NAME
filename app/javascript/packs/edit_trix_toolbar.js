@@ -7,6 +7,7 @@ const switchButton = blockButtonGroup.lastChild
 function editTrixToolbar() {
   // moveLinkButton();
   addHeaderButtons();
+  addLinkButton();
   // headerToggles();
   // h1Toggle();
   // h2Toggle();
@@ -21,14 +22,13 @@ function moveLinkButton() {
 
 function addHeaderButtons() {
   var header_num;
-  for (header_num = 1; header_num < 4; header_num++) {
+  for (header_num = 2; header_num < 4; header_num++) {
     const headerButton = document.createElement('button')
-    headerButton.classList.add("trix-button","trix-button--icon",`h${header_num}-btn`)
+    headerButton.classList.add("trix-button","trix-button--icon","trix-button--icon-heading-1",`h${header_num}-btn`)
     blockButtonGroup.appendChild(headerButton)
     addtHtmlHeaderMarkup(`${header_num}`)
   };
 }
-
 
 function addtHtmlHeaderMarkup(header_num) {
   const normalView = document.querySelector("trix-editor")
@@ -41,6 +41,28 @@ function addtHtmlHeaderMarkup(header_num) {
     console.log(header)
     const foo = `<${header}><strong>${selectedTextString}</strong></${header}>`
     normalView.editor.insertHTML(foo)
+  })
+}
+
+function addLinkButton() {
+  const linkButton = document.createElement('button')
+  linkButton.classList.add("trix-button","trix-button--icon",`link-btn`)
+  blockButtonGroup.appendChild(linkButton)
+  addLinkMarkup()
+}
+
+
+function addLinkMarkup() {
+  const normalView = document.querySelector("trix-editor")
+  document.querySelector(`.link-btn`).addEventListener('click', function(e) {
+    e.preventDefault();
+    console.log('test')
+    const normalView = document.querySelector("trix-editor")
+    const selectedTextRange = normalView.editor.getSelectedRange()
+    const selectedTextString = normalView.editor.getDocument().getStringAtRange(selectedTextRange)
+    const link_markup = `<a href="">${selectedTextString}</a>`
+    const test_markup = `<strong>TEXT</strong>`
+    normalView.editor.insertHTML(link_markup)
   })
 }
 
