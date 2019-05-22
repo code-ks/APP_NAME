@@ -6,10 +6,21 @@
     <%= f.input :title %>
     <%= f.input :author %>
     <%#= f.input :body, as: :text, :input_html => { 'rows' => 10, 'cols' => 10 } %>
-    <%= f.input :body, as: :trix_editor %>
+    <%#= f.input :body, as: :trix_editor %>
+    <%#= f.input :body %>
+    <input
+      class="form-control is-valid string optional"
+      type="text"
+      value="<h1>header1</h1><h2><strong>header2</strong></h2><h3><strong>header3</strong></h3><div><br></div>"
+      name="post[body]"
+      id="post_body">
+    <%= render 'toolbar' %>
+    <div id="trix-anchor"></div>
   </div>
 
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
 <% end %>
+
+
