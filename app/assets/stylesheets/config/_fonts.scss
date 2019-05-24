@@ -14,3 +14,13 @@ $headers-font: "Raleway", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+// #ttrix-anchor {
+//   > a {
+//     color: #E67E22;
+//   }
+// }
+#trix-anchor a {
+  color: #E67E22 !important;
+}
+
+ // a:active, a:hover, a:focus

@@ -104,4 +104,4 @@ function addLinkMarkup() {
 // }
 
 
-export { editTrixToolbar };
+// export { editTrixToolbar };

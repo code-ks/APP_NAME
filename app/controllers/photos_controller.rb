@@ -24,17 +24,25 @@ class PhotosController < ApplicationController
   # POST /photos
   # POST /photos.json
   def create
-    @photo = Photo.new(photo_params)
-
-    respond_to do |format|
-      if @photo.save
-        format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
-        format.json { render :show, status: :created, location: @photo }
-      else
-        format.html { render :new }
-        format.json { render json: @photo.errors, status: :unprocessable_entity }
-      end
-    end
+    # binding.pry
+    # puts params
+    sleep 15
+    puts '-----'
+    puts params
+    puts '-----'
+    Cloudinary::Uploader.upload(params[:photo][:path].tempfile)
+    head :no_content
+    # @photo = Photo.new(photo_params)
+    # respond_to do |format|
+    #   if @photo.save
+    #     format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
+    #     # format.json { render :show, status: :created, location: @photo }
+    #     format.json { render json: {id: @picture.id, url: @picture.path(:original)}.to_json }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @photo.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /photos/1

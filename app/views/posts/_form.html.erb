@@ -11,11 +11,13 @@
     <input
       class="form-control is-valid string optional"
       type="text"
-      value="<h1>header1</h1><h2><strong>header2</strong></h2><h3><strong>header3</strong></h3><div><br></div>"
+      value="<%= @post.body %>"
       name="post[body]"
       id="post_body">
     <%= render 'toolbar' %>
     <div id="trix-anchor"></div>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
   </div>
 
   <div class="form-actions">

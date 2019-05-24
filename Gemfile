@@ -15,13 +15,13 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
-gem 'shrine'
 # Obfuscates form HTML so that bots submit spam to invisible fields
 gem 'invisible_captcha'
 # I18n Rails and Devise support
 gem 'devise-i18n'
 gem 'rails-i18n'
 gem 'cloudinary', '~> 1.9.1'
+gem 'carrierwave', '~> 1.2'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
