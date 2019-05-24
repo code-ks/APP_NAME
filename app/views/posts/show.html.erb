@@ -13,6 +13,7 @@
 <p>
   <!-- <strong>Body:</strong> -->
   <%= sanitize @post.body %>
+  <%= cl_image_tag @post.photo %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
