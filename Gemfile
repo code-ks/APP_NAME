@@ -21,7 +21,7 @@ gem 'invisible_captcha'
 gem 'devise-i18n'
 gem 'rails-i18n'
 gem 'cloudinary', '~> 1.9.1'
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 1.3'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
